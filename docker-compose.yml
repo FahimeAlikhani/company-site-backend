@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  jadee:
+    image: jadee-backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jadee-backend
+    environment:
+     - DB_ENGINE=django.db.backends.postgresql
+     - DB_NAME=jadee
+     - DB_USER=pguser11oQ8P
+     - DB_PASSWORD=udLXtXLedaB3S6Ec
+     - DB_HOST=188.121.120.68
+     - DB_PORT=45432
+    restart: always
+
+networks:
+  default:
+    external:
+      name: nginx-proxy 
